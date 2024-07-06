@@ -1,19 +1,108 @@
- section 
-  {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: centre;
-    align-items: centre;
-    gap: 2px;
-    flex-wrap: wrap;
-    overflow: hidden;
-  }
-  section::before
-  {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sign-in container */
+.signin {
+  background: green;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Content styles */
+.content h2 {
+  text-align: center;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+/* Form styles */
+.form {
+  width: 100%;
+  height: 100%;
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  background: #f0f2f5;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.inputBox i {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  color: #999;
+  font-style: normal;
+  transition: color 0.3s;
+}
+
+.inputBox input:focus + i,
+.inputBox input:valid + i {
+  color: #555;
+}
+
+.inputBox input:focus,
+.inputBox input:valid {
+  background: #e0e0e0;
+}
+
+/* Links styles */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #0066cc;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #004499;
+}
+
+/* Submit button styles */
+.inputBox input[type="submit"] {
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+  background: #004499;
+}
