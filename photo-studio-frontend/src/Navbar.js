@@ -1,56 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          PhotoStudio
-        </Link>
-        <div className="menu-icon" onClick={toggleMenu}>
-          <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={toggleMenu}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/gallery" className="nav-links" onClick={toggleMenu}>
-              Gallery
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/upload" className="nav-links" onClick={toggleMenu}>
-              Upload
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/appointments" className="nav-links" onClick={toggleMenu}>
-              Appointments
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-links" onClick={toggleMenu}>
-              Login
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/signup" className="nav-links" onClick={toggleMenu}>
-              Signup
-            </Link>
-          </li>
-        </ul>
-      </div>
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/gallery">Gallery</Link>
+      <Link to="/upload">Upload</Link>
+      <Link to="/appointments">Appointments</Link>
+      <Link to="/login">Login</Link>
+      <Link to="/signup">Signup</Link>
     </nav>
   );
 };
